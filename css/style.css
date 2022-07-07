@@ -1,0 +1,382 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-400-i {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+span {
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.btn {
+  padding: 16px 32px;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 9px;
+  position: relative;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+html {
+  --color-body: white;
+  --border-inner: #e4e4e4;
+  --border-mid: #e8e8e8;
+  --border-outer: #eeeeee;
+  --bottom-line: #e4e4e4;
+  --top-line: #e4e4e4;
+  --speaker: #efefef;
+  --camera: #efefef;
+  --shadow: #8a8a8a;
+  --text: #1f1f1f;
+}
+
+html .stop-1 {
+  stop-color: #f84f63;
+}
+
+html .stop-2 {
+  stop-color: #f8792b;
+}
+
+html * {
+  -webkit-transition: all 750ms !important;
+  transition: all 750ms !important;
+  -webkit-transition-delay: 0 !important;
+          transition-delay: 0 !important;
+}
+
+html body {
+  height: 100vh;
+  background: var(--color-body);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+html .iphone {
+  position: relative;
+  width: 270px;
+  height: 585px;
+  background-color: #f5f5f5;
+  border-radius: 40px;
+  -webkit-box-shadow: 0px 0px 0px 11px var(--border-inner), 0px 0px 0px 13px var(--border-mid), 0px 0px 0px 20px var(--border-outer), 0px 20px 40px var(--shadow);
+          box-shadow: 0px 0px 0px 11px var(--border-inner), 0px 0px 0px 13px var(--border-mid), 0px 0px 0px 20px var(--border-outer), 0px 20px 40px var(--shadow);
+  overflow: hidden;
+}
+
+html .iphone:before, html .iphone:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+}
+
+html .iphone:after {
+  bottom: 7px;
+  width: 105px;
+  height: 4px;
+  background-color: var(--bottom-line);
+  border-radius: 10px;
+}
+
+html .iphone:before {
+  top: 0px;
+  width: 56%;
+  height: 30px;
+  background-color: var(--top-line);
+  border-radius: 0px 0px 40px 40px;
+}
+
+html .iphone .speaker,
+html .iphone .camera {
+  position: absolute;
+  display: block;
+  color: transparent;
+  z-index: 3;
+}
+
+html .iphone .speaker {
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 6px);
+          transform: translate(-50%, 6px);
+  height: 8px;
+  width: 20%;
+  background-color: var(--speaker);
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0px -3px 3px 0px white;
+          box-shadow: inset 0px -3px 3px 0px white;
+}
+
+html .iphone .camera {
+  left: 10%;
+  top: 0px;
+  -webkit-transform: translate(150px, 4px);
+          transform: translate(150px, 4px);
+  width: 12px;
+  height: 12px;
+  background-color: var(--camera);
+  border-radius: 12px;
+  -webkit-box-shadow: inset 0px -3px 2px 0px white;
+          box-shadow: inset 0px -3px 2px 0px white;
+}
+
+html .iphone .camera::after {
+  content: '';
+  position: absolute;
+  background-color: #2d4d76;
+  width: 6px;
+  height: 6px;
+  top: 2px;
+  left: 2px;
+  top: 3px;
+  left: 3px;
+  display: block;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.5);
+}
+
+html .iphone .moon {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  -webkit-transform: translate(-50%, -20%) rotate(-45deg);
+          transform: translate(-50%, -20%) rotate(-45deg);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  z-index: 2;
+}
+
+html .iphone .moon svg path {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+html .iphone .text {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: var(--text);
+  z-index: 2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html .iphone .text .title {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+html .iphone .trigger {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #111111;
+  background-image: url(../img/moon.svg);
+  background-size: 28px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  -webkit-transform: translate(-50%, -80%);
+          transform: translate(-50%, -80%);
+  z-index: 1;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+html .iphone .trigger::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #111111;
+  -webkit-transform: translateZ(-1px);
+          transform: translateZ(-1px);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+html .iphone .trigger:hover::after {
+  -webkit-transform: translateZ(-1px) scale(1.5);
+          transform: translateZ(-1px) scale(1.5);
+}
+
+html .iphone .overlay {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #111111;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  -webkit-transform: translate(-50%, -80%);
+          transform: translate(-50%, -80%);
+  -webkit-transition: all 0.75s ease-out;
+  transition: all 0.75s ease-out;
+}
+
+html .circle {
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  top: -300px;
+  background: -webkit-gradient(linear, left top, right top, from(#f84f63), to(#f8792b));
+  background: linear-gradient(90deg, #f84f63 0%, #f8792b 100%);
+  -webkit-box-shadow: 0px 8px 16px rgba(248, 121, 43, 0.25);
+          box-shadow: 0px 8px 16px rgba(248, 121, 43, 0.25);
+}
+
+html.dark {
+  --color-body: #1f1f1f;
+  --border-inner: #1f1f1f;
+  --border-mid: #191919;
+  --border-outer: #111111;
+  --bottom-line: #1f1f1f;
+  --top-line: #1f1f1f;
+  --speaker: #101010;
+  --camera: #101010;
+  --shadow: #111111;
+  --text: #e4e4e4;
+}
+
+html.dark .stop-1 {
+  stop-color: #8079f0;
+}
+
+html.dark .stop-2 {
+  stop-color: #82abf2;
+}
+
+html.dark .iphone {
+  -webkit-animation: toBlack 0.7s both;
+          animation: toBlack 0.7s both;
+}
+
+html.dark .speaker {
+  -webkit-box-shadow: inset 0px -3px 3px 0px rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0px -3px 3px 0px rgba(255, 255, 255, 0.2);
+}
+
+html.dark .camera {
+  -webkit-box-shadow: inset 0px -3px 2px 0px rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0px -3px 2px 0px rgba(255, 255, 255, 0.2);
+}
+
+html.dark .moon svg path {
+  d: path("M38.5 80C38.5 124.183 80 163 80 160C35.8172 160 0 124.183 0 80C0 35.8172 35.8172 0 80 0C80 0 38.5 35.8172 38.5 80Z");
+}
+
+html.dark .trigger {
+  background-image: url(../img/sun.svg);
+}
+
+html.dark .overlay {
+  -webkit-transform: translate(-50%, -80%) scale(20);
+          transform: translate(-50%, -80%) scale(20);
+}
+
+html.dark .circle {
+  background: -webkit-gradient(linear, left top, right top, from(#8079f0), to(#82abf2));
+  background: linear-gradient(90deg, #8079f0 0%, #82abf2 100%);
+  -webkit-box-shadow: 0px 8px 16px rgba(131, 173, 243, 0.25);
+          box-shadow: 0px 8px 16px rgba(131, 173, 243, 0.25);
+}
+
+@-webkit-keyframes toBlack {
+  0% {
+    background-color: #f5f5f5;
+  }
+  90% {
+    background-color: #f5f5f5;
+  }
+  100% {
+    background-color: #111111;
+  }
+}
+
+@keyframes toBlack {
+  0% {
+    background-color: #f5f5f5;
+  }
+  90% {
+    background-color: #f5f5f5;
+  }
+  100% {
+    background-color: #111111;
+  }
+}
+/*# sourceMappingURL=style.css.map */
