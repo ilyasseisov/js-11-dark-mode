@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
 @import 'framework';
 
 $dark-1: #1f1f1f;
@@ -21,7 +23,23 @@ $stop-color-light-1: #f84f63;
 $stop-color-light-2: #f8792b;
 ///////////////////////////////
 
+body {
+  height: 100vh;
+  background: var(--color-body);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+html * {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
 html {
+  // light mode colors
   --color-body: white;
   --border-inner: #{$light-1};
   --border-mid: #{$light-2};
@@ -39,21 +57,6 @@ html {
     stop-color: $stop-color-light-2;
   }
   /////////////////////
-  & * {
-    transition: all 750ms !important;
-    transition-delay: 0 !important;
-  }
-  /////////////////////
-
-  body {
-    height: 100vh;
-    background: var(--color-body);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
 
   .iphone {
     position: relative;
@@ -66,6 +69,14 @@ html {
       0px 20px 40px var(--shadow);
     overflow: hidden;
 
+    @media (max-width: 440px) {
+      width: 240px;
+    }
+    @media (max-width: 320px) {
+      width: 208px;
+    }
+
+    // bottom line and top panel
     &:before,
     &:after {
       content: '';
@@ -75,6 +86,7 @@ html {
       z-index: 2;
     }
 
+    // bottom line
     &:after {
       bottom: 7px;
       width: 105px;
@@ -83,6 +95,7 @@ html {
       border-radius: 10px;
     }
 
+    // top panel
     &:before {
       top: 0px;
       width: 56%;
@@ -91,6 +104,7 @@ html {
       border-radius: 0px 0px 40px 40px;
     }
 
+    // speaker and camera
     .speaker,
     .camera {
       position: absolute;
@@ -99,6 +113,7 @@ html {
       z-index: 3;
     }
 
+    // speaker
     .speaker {
       top: 0px;
       left: 50%;
@@ -110,6 +125,7 @@ html {
       box-shadow: inset 0px -3px 3px 0px rgba(256, 256, 256, 1);
     }
 
+    // speaker and camera
     .camera {
       left: 10%;
       top: 0px;
@@ -120,6 +136,7 @@ html {
       border-radius: 12px;
       box-shadow: inset 0px -3px 2px 0px rgba(256, 256, 256, 1);
 
+      // camera eye (lens)
       &::after {
         content: '';
         position: absolute;
@@ -187,6 +204,7 @@ html {
       z-index: 1;
       transform-style: preserve-3d;
       transition: all 0.5s ease-out;
+      // outer circle for on:hover effect
       &::after {
         content: '';
         position: absolute;
@@ -202,6 +220,7 @@ html {
         transform: translateZ(-1px) scale(1.5);
       }
     }
+    // black overlay on the phone screen
     .overlay {
       width: 48px;
       height: 48px;
@@ -228,9 +247,21 @@ html {
       $stop-color-light-2 100%
     );
     box-shadow: 0px 8px 16px rgba(248, 121, 43, 0.25);
+
+    @media (max-width: 767.9px) {
+      width: 400px;
+      height: 400px;
+      top: -160px;
+    }
+
+    @media (max-width: 440px) {
+      display: none;
+    }
   }
 
+  // dark mode
   &.dark {
+    // dark mode colors
     --color-body: #{$dark-1};
     --border-inner: #{$dark-1};
     --border-mid: #{$dark-2};
@@ -247,19 +278,21 @@ html {
     .stop-2 {
       stop-color: $stop-color-dark-2;
     }
-
-    /////////////////////
-
-    /////////////////////
+    ///////////////////////////////
+    // to cover angles of the phone's screen
+    // without changing background color white edges are visible
     .iphone {
       animation: toBlack 0.7s both;
     }
+    // change inner shadow for proper light cast
     .speaker {
       box-shadow: inset 0px -3px 3px 0px rgba(256, 256, 256, 0.2);
     }
+    // change inner shadow for proper light cast
     .camera {
       box-shadow: inset 0px -3px 2px 0px rgba(256, 256, 256, 0.2);
     }
+    // change sun into cresent
     .moon {
       svg path {
         d: path(
@@ -267,12 +300,15 @@ html {
         );
       }
     }
+    // chage moon into sun
     .trigger {
       background-image: url(../img/sun.svg);
     }
+    // increase size of the overlay to cover the whole phone screen
     .overlay {
       transform: translate(-50%, -80%) scale(20);
     }
+    // change color of the circle behind the phone
     .circle {
       background: linear-gradient(
         90deg,
@@ -284,6 +320,8 @@ html {
   }
 }
 
+// need animation of the background to cover angles of the phone
+// otherwise there are small light segments which are visible
 @keyframes toBlack {
   0% {
     background-color: $light-5;
@@ -294,4 +332,25 @@ html {
   100% {
     background-color: $dark-5;
   }
+}
+
+.jssecrets {
+  font-weight: 500;
+  text-decoration: none !important;
+  font-family: 'Urbanist';
+  padding: 16px;
+  background: #ffc805;
+  color: #000000;
+  font-size: 1.2em;
+  letter-spacing: 0.2px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(184, 144, 0, 0.1882352941),
+    0px 8px 24px rgba(184, 144, 0, 0.3764705882);
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  transition: all 0.3s;
+}
+.jssecrets:hover {
+  transform: translateY(-4px);
 }

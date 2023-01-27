@@ -1,5 +1,11 @@
+// Variables
 const html = document.documentElement;
 const trigger = document.querySelector('.trigger');
-trigger.addEventListener('click', () => {
+
+// Functions
+const toggleMode = () => {
   html.classList.toggle('dark');
-});
+};
+
+// Event Listeners
+trigger.addEventListener('click', toggleMode);
